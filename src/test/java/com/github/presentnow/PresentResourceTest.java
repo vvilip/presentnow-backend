@@ -27,6 +27,17 @@ public class PresentResourceTest
 	}
 
 	@Test
+	void getNotPresentById()
+	{
+		given()
+			.when()
+			.get("/99")
+			.then()
+			.statusCode(404)
+			.body("name", is("Personalized Star Map"));
+	}
+
+	@Test
 	void savePresent()
 	{
 		given()
